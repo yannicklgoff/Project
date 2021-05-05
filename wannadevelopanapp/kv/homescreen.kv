@@ -1,0 +1,51 @@
+#:import utils kivy.utils
+<HomeScreen>:
+    FloatLayout:
+        #In de floatlayout kleur veranderen voor ieder grid
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#B2FF33")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Label:
+        # App naam
+            text: "ChainApp"
+            color: 0,0,0,1
+            rows: 1
+            pos_hint: {"top": 1, "left": 1}
+            size_hint: 1, .2
+            font_size: 30
+
+
+        GridLayout:
+        # Profiel vernaderen
+            rows: 1
+            pos_hint: {"top": .8, "left": 1}
+            size_hint: 1, .3
+            ImageButton:
+                source: "icons/user-profile.png"
+                on_release:
+                    print("released")
+                    root.manager.current = 'profile_screen'
+
+
+        GridLayout:
+        #3rde partijen en settings
+            rows: 1
+            pos_hint: {"top": .5, "left": 1}
+            size_hint: 1, .5
+            # derde partijen en settings
+            ImageButton:
+                source: "icons/2077632-200.png"
+                on_release:
+                    print("releasedddd")
+                    root.manager.current = 'derde_partij'
+            ImageButton:
+                source: "icons/Windows_Settings_app_icon.png"
+                on_release:
+                    print("released")
+                    root.manager.current = 'settings_screen'
+
+

@@ -1,0 +1,22 @@
+#:include kv/homescreen.kv
+#:include kv/settingsscreen.kv
+#:include kv/derdepartij.kv
+#:include kv/profiel.kv
+
+
+GridLayout:
+    cols:1
+    ScreenManager:
+        id: screen_manager
+        HomeScreen:
+            name: "home_screen"
+            id: home_screen
+        SettingsScreen:
+            name: "settings_screen"
+            id: settings_screen
+        DerdePartij:
+            name: "derde_partij"
+            id: derde_partij
+        ProfileScreen:
+            name: "profile_screen"
+            id: profile_screen

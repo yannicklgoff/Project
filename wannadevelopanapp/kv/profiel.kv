@@ -1,0 +1,70 @@
+#:import utils kivy.utils
+<ProfileScreen>:
+    FloatLayout:
+        #In de floatlayout kleur veranderen voor ieder grid
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#B2FF33")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Label:
+            text: "Profiel gegevens"
+            color: 0,0,0,1
+            rows: 1
+            pos_hint: {"top": 1, "left": 1}
+            size_hint: 1, .2
+            font_size: 20
+
+        BoxLayout:
+        # Naam
+            rows: 1
+            pos_hint: {"top": .8, "left": 1}
+            size_hint: 1, .1
+            TextInput:
+                id: name
+                size_hint_x: 30
+            Button:
+                text: "Naam Doorgeven"
+                size_hint_x: 20
+
+
+        BoxLayout:
+        # Leeftijd
+            rows: 1
+            pos_hint: {"top": .7, "left": 1}
+            size_hint: 1, .1
+            TextInput:
+                size_hint_x: 30
+            Button:
+                text: "Leeftijd doorgeven"
+                size_hint_x: 20
+
+
+        BoxLayout:
+        # Gender
+            rows: 1
+            pos_hint: {"top": .6, "left": 1}
+            size_hint: 1, .1
+            TextInput:
+                size_hint_x: 30
+            Button:
+                text: "Gender doorgeven"
+                size_hint_x: 20
+
+        BoxLayout:
+        #Blockchain image
+            rows: 1
+            pos_hint: {"top": .4, "left": 1}
+            size_hint: 1, .5
+            ImageButton:
+                source: "icons/1674734.png"
+                pos_hint: {"top": 1, "left": 1}
+                size_hint: .5, .5
+                on_release:
+                    print("released")
+                    root.manager.current = 'home_screen'
+
+
+
